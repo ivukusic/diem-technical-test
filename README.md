@@ -6,7 +6,7 @@ Remix is owned and maintained by Shopify, so this will give you a fairly accurat
 
 ## Setup
 
-At Diem, we using Node v18 LTS for our projects. Ensure you have this specific version installed on your machine. Ideally, make use of NVM to handle Node versioning. If you are using NVM, simply run `nvm use` in the root of the project once you've installed Node. More information on NVM can be found below:
+At Diem, we use Node v18 LTS for our projects. Ensure you have this specific version installed on your machine. Ideally, make use of NVM to handle Node versioning. If you are using NVM, simply run `nvm use` in the root of the project once you've installed Node. More information on NVM can be found below:
 
 https://github.com/nvm-sh/nvm
 
@@ -24,7 +24,7 @@ Once done, run the following command to start your local development server:
 npm start
 ```
 
-A local development will start, listening on port 3000. You can navigate to the following to start development:
+A local dev server will start, listening on port 3000. You can navigate to the following to start development:
 http://localhost:3000/
 
 ## Overview
