@@ -21,9 +21,25 @@ npm i
 Once done, run the following command to start your local development server:
 
 ```bash
-npm run dev
+npm start
 ```
 
-## Acceptance Criteria
+A local development will start, listening on port 3000. You can navigate to the following to start development:
+http://localhost:3000/
 
-You will be building a simple product page using some mock data. We require the following sections
+## Overview
+
+You will be building a simple product page using some mock data. Please use the wireframe below:
+
+![Wireframe](./assets/wireframe.png)
+
+Product data will need to be requested from the following endpoint:
+
+https://dummyjson.com/products/1
+
+### Acceptance Criteria
+
+- Using the wireframe as a starting point, create a simple product page layout, incorporating each section
+- You have design freedom, show us how you would approach the layout of this page
+- Ensure you request data from the endpoint listed above
+- We want to see your approach to structuring the page using components
