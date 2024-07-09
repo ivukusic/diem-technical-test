@@ -29,17 +29,20 @@ http://localhost:3000/
 
 ## Overview
 
-You will be building a simple product page using some mock data. Please use the wireframe below:
+You will be building a simple product page using some mock data. Please use the wireframe layout below as a starting point. You will be expected to make use of your design skills, please don't copy the wireframe exactly, introduce some design language:
 
 ![Wireframe](./assets/wireframe.png)
 
-Product data will need to be requested from the following endpoint:
+The product data will need to be requested from the following endpoint:
 
 https://dummyjson.com/products/1
+
+Ensure you make use of as much of the data as possible, displaying discount values, remaining stock, tags, category, reviews, etc. Use your best judgement as to how this data fits into the design.
 
 ### Acceptance Criteria
 
 - Using the wireframe as a starting point, create a simple product page layout, incorporating each section
-- You have design freedom, show us how you would approach the layout of this page
+- You have design freedom, show us how you would approach the design of this page
 - Ensure you request data from the endpoint listed above
+- Make use of all available data in the API response
 - We want to see your approach to structuring the page using components
