@@ -2,5 +2,6 @@
   "singleQuote": true,
   "trailingComma": "all",
   "endOfLine": "auto",
-  "printWidth": 94
+  "printWidth": 94,
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
