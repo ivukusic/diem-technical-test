@@ -13,7 +13,7 @@ export default function HomePage() {
 
 export async function loader() {
   const productList = await getProducts();
-  if (!productList.products.length) {
+  if (!productList.products?.length) {
     throw json({ message: 'Could not find products' }, { status: 404 });
   }
   return json(productList);

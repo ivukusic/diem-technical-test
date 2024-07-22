@@ -32,8 +32,15 @@ export const ProductDetails = () => {
         <div className="px-4 md:flex-1">
           <div className="relative flex items-start justify-between">
             <div className="mr-2 pr-24">
-              <h2 className="font-bold leading-3">{product.brand}</h2>
-              <h3 className="mb-2 text-2xl font-bold">{product.title}</h3>
+              <h2 className="font-bold leading-3">
+                {product.brand}
+                {!!product.category && (
+                  <span className="font-regular ml-2 rounded-full border border-yellow-900 p-2 py-1.5 text-sm text-yellow-900">
+                    {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+                  </span>
+                )}
+              </h2>
+              <h3 className="mb-2 mt-2 text-2xl font-bold">{product.title}</h3>
             </div>
             <div className="absolute right-0 top-0 flex flex-col items-center">
               <div className="-mt-2 h-24 w-24">
@@ -48,13 +55,19 @@ export const ProductDetails = () => {
               </span>
             </div>
           </div>
-
+          <div className="mt-1">
+            <RatingStars rating={product.rating} />
+          </div>
           <div>
             <span className="mr-1 font-bold">SKU:</span>
             <span>{product.sku}</span>
           </div>
 
-          <div className="mr-4">
+          <div className="mt-4">
+            <span className="mr-1 font-bold">Availability:</span>
+            <span>{product.availabilityStatus}</span>
+          </div>
+          <div className="mr-4 mt-1">
             <span className="mr-1 font-bold">Price:</span>$
             <span className="mr-2">{price}</span>
             {discount ? (
@@ -69,14 +82,18 @@ export const ProductDetails = () => {
             )}
           </div>
 
-          <div className="mt-4">
-            <span className="mr-1 font-bold">Availability:</span>
-            <span>{product.availabilityStatus}</span>
-          </div>
-
-          <div className="mt-4">
-            <RatingStars rating={product.rating} />
-          </div>
+          {!!product.tags?.length && (
+            <div className="mt-6">
+              {product.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="font-regular mr-1 cursor-pointer rounded-md border border-gray-900/70 p-2 py-1.5 text-sm text-gray-900 transition-all duration-500 hover:border-yellow-900 hover:bg-yellow-900 hover:text-white"
+                >
+                  {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                </span>
+              ))}
+            </div>
+          )}
 
           <div className="mt-4">
             <span className="font-bold">Product description:</span>
@@ -91,6 +108,18 @@ export const ProductDetails = () => {
                   {product.dimensions.width}x{product.dimensions.height}x
                   {product.dimensions.depth}
                 </span>
+              </div>
+            )}
+            {!!product.weight && (
+              <div>
+                <span className="mr-1 font-bold">Weight:</span>
+                <span className="text-sm">{product.weight} lb</span>
+              </div>
+            )}
+            {!!product.warrantyInformation && (
+              <div>
+                <span className="mr-1 font-bold">Warranty:</span>
+                <span className="text-sm">{product.warrantyInformation}</span>
               </div>
             )}
             {!!product.returnPolicy && (

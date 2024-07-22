@@ -28,7 +28,7 @@ export const ProductDetailsGallery = ({ product }) => {
 
   const images = product.images;
   const image = images?.[0];
-  const restImages = images?.slice(1, images.length).map((src) => ({ src }));
+  const restImages = images?.slice(1, images?.length).map((src) => ({ src }));
   return (
     <>
       <div className="mb-4 px-4 md:flex-1">
@@ -66,8 +66,8 @@ export const ProductDetailsGallery = ({ product }) => {
       </div>
       <Lightbox
         close={handleClose}
-        plugins={restImages.length ? [Thumbnails] : []}
-        slides={[{ src: image }, ...restImages]}
+        plugins={restImages?.length ? [Thumbnails] : []}
+        slides={[{ src: image }, ...(restImages?.length ? restImages : [])]}
         index={itemIndex}
         open={open}
         styles={{
